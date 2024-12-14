@@ -4,6 +4,7 @@ namespace SMW\Tests;
 
 use MediaWiki\Content\Renderer\ContentRenderer;
 use MediaWiki\MediaWikiServices;
+use PHPUnit\Framework\TestCase;
 use SMW\ContentParser;
 use SMW\Tests\PHPUnitCompat;
 
@@ -16,7 +17,7 @@ use SMW\Tests\PHPUnitCompat;
  *
  * @author mwjames
  */
-class ContentParserTest extends \PHPUnit_Framework_TestCase {
+class ContentParserTest extends TestCase {
 
 	use PHPUnitCompat;
 
