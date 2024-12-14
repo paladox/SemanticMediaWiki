@@ -13,6 +13,7 @@ use MediaWiki\Content\Renderer\ContentParseParams;
 use MediaWiki\Content\Transform\PreSaveTransformParams;
 use MediaWiki\MediaWikiServices;
 use SMW\ParserData;
+use SMW\Schema\Exception\SchemaTypeNotFoundException;
 use SMW\Schema\Schema;
 
 /**
@@ -119,7 +120,7 @@ class SchemaContentHandler extends JsonContentHandler {
 				$content->toJson()
 			);
 		} catch ( SchemaTypeNotFoundException $e ) {
-			if ( !$this->isValid() && $content->getErrorMsg() !== '' ) {
+			if ( !$content->isValid() && $content->getErrorMsg() !== '' ) {
 				$errors[] = [ 'smw-schema-error-json', $content->getErrorMsg() ];
 			} elseif ( $e->getType() === '' || $e->getType() === null ) {
 				$errors[] = [ 'smw-schema-error-type-missing' ];
