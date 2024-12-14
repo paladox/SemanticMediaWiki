@@ -96,7 +96,7 @@ class SchemaContentHandler extends JsonContentHandler {
 	 * {@inheritDoc}
 	 */
 	public function validateSave( Content $content, ValidationParams $validationParams ) {
-		$content->initinitServices();
+		$content->initServices();
 
 		$page = $validationParams->getPageIdentity();
 
