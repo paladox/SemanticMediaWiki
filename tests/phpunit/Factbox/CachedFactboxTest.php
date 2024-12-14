@@ -144,7 +144,7 @@ class CachedFactboxTest extends \PHPUnit\Framework\TestCase {
 	public function assertPreProcess( $expected, $result, $outputPage, $instance ) {
 		if ( $expected['text'] ) {
 
-			$this->assertContains(
+			$this->assertStringContainsString(
 				$expected['text'],
 				$result,
 				'Asserts that content was altered as expected'

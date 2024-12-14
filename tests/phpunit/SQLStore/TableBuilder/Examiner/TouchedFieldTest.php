@@ -65,7 +65,7 @@ class TouchedFieldTest extends \PHPUnit\Framework\TestCase {
 		$instance->setMessageReporter( $this->spyMessageReporter );
 		$instance->check();
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'updating 42 rows with',
 			$this->spyMessageReporter->getMessagesAsString()
 		);

@@ -37,7 +37,7 @@ class DeferredTest extends \PHPUnit\Framework\TestCase {
 			->disableOriginalConstructor()
 			->getMock();
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'smw-deferred-query',
 			Deferred::buildHTML( $query )
 		);

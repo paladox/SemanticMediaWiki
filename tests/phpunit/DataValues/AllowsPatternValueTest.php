@@ -171,7 +171,7 @@ class AllowsPatternValueTest extends \PHPUnit\Framework\TestCase {
 
 		$instance->setUserValue( 'abc/e' );
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'Smw_allows_pattern',
 			$instance->getShortWikiText()
 		);
@@ -207,7 +207,7 @@ class AllowsPatternValueTest extends \PHPUnit\Framework\TestCase {
 
 		$instance->setUserValue( 'abc/e' );
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'Smw_allows_pattern',
 			$instance->getShortHtmlText()
 		);

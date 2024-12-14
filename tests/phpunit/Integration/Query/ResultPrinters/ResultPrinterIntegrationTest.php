@@ -105,7 +105,7 @@ class ResultPrinterIntegrationTest extends SMWIntegrationTestCase {
 
 		$parserOutput = $this->pageCreator->getEditInfo()->getOutput();
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'do something',
 			$parserOutput->getText()
 		);

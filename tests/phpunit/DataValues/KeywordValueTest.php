@@ -91,7 +91,7 @@ class KeywordValueTest extends \PHPUnit\Framework\TestCase {
 			$instance->getShortWikiText()
 		);
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'smw-datavalue-keyword-maximum-length',
 			implode( ', ', $instance->getErrors() )
 		);
@@ -156,7 +156,7 @@ class KeywordValueTest extends \PHPUnit\Framework\TestCase {
 			$instance->getShortWikiText()
 		);
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'[[:Special:SearchByProperty/cl:OkJhci9mb28|foo]]',
 			$instance->getShortWikiText( 'linker' )
 		);

@@ -85,7 +85,7 @@ class HashBuilderTest extends \PHPUnit\Framework\TestCase {
 			HashBuilder::createFromContent( [ 'Foo' ] )
 		);
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'Bar',
 			HashBuilder::createFromContent( [ 'Foo' ], 'Bar' )
 		);

@@ -52,7 +52,7 @@ class OutdatedEntitiesMaxCountThresholdMaintenanceAlertTaskHandlerTest extends \
 			$this->store
 		);
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'smw-admin-alerts-outdates-entities',
 			$instance->getHtml()
 		);

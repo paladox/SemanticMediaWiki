@@ -84,7 +84,7 @@ class WantedPropertiesQueryPageTest extends \PHPUnit\Framework\TestCase {
 			[ $property, 42 ]
 		);
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'Foo',
 			$result
 		);

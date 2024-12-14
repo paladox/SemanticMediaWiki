@@ -65,7 +65,7 @@ class AlertsTaskHandlerTest extends \PHPUnit\Framework\TestCase {
 			]
 		);
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'<section id="tab-content-foo">bar</section>',
 			$instance->getHtml()
 		);

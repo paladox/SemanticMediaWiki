@@ -63,7 +63,7 @@ class SetupStoreMaintenanceTest extends SMWIntegrationTestCase {
 
 		$maintenanceRunner->run();
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'Database table cleanup',
 			$this->spyMessageReporter->getMessagesAsString()
 		);
@@ -98,7 +98,7 @@ class SetupStoreMaintenanceTest extends SMWIntegrationTestCase {
 		$maintenanceRunner->setQuiet();
 		$maintenanceRunner->run();
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'Core table(s)',
 			$this->spyMessageReporter->getMessagesAsString()
 		);

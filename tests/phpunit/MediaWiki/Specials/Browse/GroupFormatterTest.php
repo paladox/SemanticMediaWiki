@@ -83,7 +83,7 @@ class GroupFormatterTest extends \PHPUnit\Framework\TestCase {
 			$properties
 		);
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'<span class="group-link">',
 			$instance->getGroupLink( 'Bar' )
 		);
@@ -147,7 +147,7 @@ class GroupFormatterTest extends \PHPUnit\Framework\TestCase {
 			$properties
 		);
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'<span class="group-link">',
 			$instance->getGroupLink( 'Foo schema' )
 		);
@@ -200,12 +200,12 @@ class GroupFormatterTest extends \PHPUnit\Framework\TestCase {
 
 		$di = new DIWikiPage( 'Foo bar', NS_CATEGORY );
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'smw-property-group-label-foo-bar',
 			$instance->getMessageClassLink( GroupFormatter::MESSAGE_GROUP_LABEL, $di )
 		);
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'smw-property-group-description-foo-bar',
 			$instance->getMessageClassLink( GroupFormatter::MESSAGE_GROUP_DESCRIPTION, $di )
 		);

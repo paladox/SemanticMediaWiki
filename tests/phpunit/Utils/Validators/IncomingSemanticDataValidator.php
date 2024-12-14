@@ -14,7 +14,7 @@ use SMW\Tests\PHPUnitCompat;
  *
  * @author mwjames
  */
-class IncomingSemanticDataValidator extends \PHPUnit_Framework_Assert {
+class IncomingSemanticDataValidator extends \PHPUnit\Framework\Assert {
 
 	use PHPUnitCompat;
 
@@ -67,7 +67,7 @@ class IncomingSemanticDataValidator extends \PHPUnit_Framework_Assert {
 
 			$key = $property->getKey();
 
-			$this->assertContains(
+			$this->assertStringContainsString(
 				$key,
 				$incomingSemanticData['propertyKeys'],
 				$this->createMessage( 'propertyKeys', $key, $message, $incomingSemanticData['propertyKeys'] )
@@ -85,7 +85,7 @@ class IncomingSemanticDataValidator extends \PHPUnit_Framework_Assert {
 		}
 
 		foreach ( $incomingPropertyValues as $value ) {
-			$this->assertContains(
+			$this->assertStringContainsString(
 				$value,
 				$incomingSemanticData['propertyValues'],
 				$this->createMessage( 'propertyValues', $value, $message, $incomingSemanticData['propertyValues'] )

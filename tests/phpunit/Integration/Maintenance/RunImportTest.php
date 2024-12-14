@@ -49,7 +49,7 @@ class RunImportTest extends SMWIntegrationTestCase {
 			$maintenanceRunner->run()
 		);
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'Importing from smw.vocab.json',
 			$this->spyMessageReporter->getMessagesAsString()
 		);

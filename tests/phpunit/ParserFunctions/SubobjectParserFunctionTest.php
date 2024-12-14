@@ -80,7 +80,7 @@ class SubobjectParserFunctionTest extends \PHPUnit\Framework\TestCase {
 		$instance = $this->acquireInstance( $subobject );
 		$instance->parse( new ParserParameterFormatter( $parameters ) );
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			$expected['identifier'],
 			$subobject->getSubobjectId()
 		);

@@ -34,10 +34,7 @@ class HighlighterTest extends \PHPUnit\Framework\TestCase {
 	public function testGetTypeId( $type, $expected ) {
 		$results = Highlighter::getTypeId( $type );
 
-		$this->assertInternalType(
-			'integer',
-			$results
-		);
+		$this->assertIsInt( $results );
 
 		$this->assertEquals(
 			$expected,
@@ -63,10 +60,7 @@ class HighlighterTest extends \PHPUnit\Framework\TestCase {
 		] );
 
 		// Check without caption/content set
-		$this->assertInternalType(
-			'string',
-			$instance->getHtml()
-		);
+		$this->assertIsString( $instance->getHtml() );
 
 		$instance->setContent( [
 			'caption' => '123',
@@ -74,10 +68,7 @@ class HighlighterTest extends \PHPUnit\Framework\TestCase {
 		] );
 
 		// Check with caption/content set
-		$this->assertInternalType(
-			'string',
-			$instance->getHtml()
-		);
+		$this->assertIsString( $instance->getHtml() );
 	}
 
 	public function testHasHighlighterClass() {

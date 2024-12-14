@@ -48,7 +48,7 @@ class DumpRDFTest extends SMWIntegrationTestCase {
 			$maintenanceRunner->run()
 		);
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'writting OWL/RDF information',
 			$this->spyMessageReporter->getMessagesAsString()
 		);

@@ -111,7 +111,7 @@ class JsonImportContentsFileDirReaderTest extends \PHPUnit\Framework\TestCase {
 
 		$instance->getContentList();
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'FooFile is not readable',
 			implode( '', $instance->getErrors() )
 		);

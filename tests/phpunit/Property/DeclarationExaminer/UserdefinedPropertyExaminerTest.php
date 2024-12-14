@@ -90,7 +90,7 @@ class UserdefinedPropertyExaminerTest extends \PHPUnit\Framework\TestCase {
 			$dataItemFactory->newDIProperty( 'Foo' )
 		);
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'["info","smw-property-userdefined-fixedtable","Foo"]',
 			$instance->getMessagesAsString()
 		);
@@ -123,7 +123,7 @@ class UserdefinedPropertyExaminerTest extends \PHPUnit\Framework\TestCase {
 			$property
 		);
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'["error","smw-property-req-violation-missing-fields","Foo","' . $name . '"]',
 			$instance->getMessagesAsString()
 		);
@@ -181,7 +181,7 @@ class UserdefinedPropertyExaminerTest extends \PHPUnit\Framework\TestCase {
 			$property
 		);
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'["error","smw-property-req-violation-multiple-fields","Foo","' . $name . '"]',
 			$instance->getMessagesAsString()
 		);
@@ -202,7 +202,7 @@ class UserdefinedPropertyExaminerTest extends \PHPUnit\Framework\TestCase {
 			$property
 		);
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'["error","smw-property-req-violation-missing-formatter-uri","Foo"]',
 			$instance->getMessagesAsString()
 		);
@@ -227,7 +227,7 @@ class UserdefinedPropertyExaminerTest extends \PHPUnit\Framework\TestCase {
 			$property
 		);
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'["error","smw-property-req-violation-missing-maps-extension","Foo"]',
 			$instance->getMessagesAsString()
 		);
@@ -265,7 +265,7 @@ class UserdefinedPropertyExaminerTest extends \PHPUnit\Framework\TestCase {
 			$dataItemFactory->newDIProperty( 'Foo' )
 		);
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'["warning","smw-property-req-violation-import-type","Foo"]',
 			$instance->getMessagesAsString()
 		);
@@ -317,7 +317,7 @@ class UserdefinedPropertyExaminerTest extends \PHPUnit\Framework\TestCase {
 			$property
 		);
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'["error","smw-property-req-violation-forced-removal-annotated-type","Foo","Bar"]',
 			$instance->getMessagesAsString()
 		);
@@ -359,7 +359,7 @@ class UserdefinedPropertyExaminerTest extends \PHPUnit\Framework\TestCase {
 			$property
 		);
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'["warning","smw-property-req-violation-parent-type","Foo","Parent"]',
 			$instance->getMessagesAsString()
 		);

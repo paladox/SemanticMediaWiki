@@ -158,7 +158,7 @@ class VersionExaminerTest extends \PHPUnit\Framework\TestCase {
 			$instance->meetsVersionMinRequirement( [ 'foo' => 2 ] )
 		);
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			"The `foo` database version of 1 doesn't meet the minimum requirement of 2",
 			$this->spyMessageReporter->getMessagesAsString()
 		);

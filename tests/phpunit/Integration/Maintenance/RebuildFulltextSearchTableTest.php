@@ -46,7 +46,7 @@ class RebuildFulltextSearchTableTest extends SMWIntegrationTestCase {
 
 		$maintenanceRunner->run();
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'The script rebuilds the search index',
 			$this->spyMessageReporter->getMessagesAsString()
 		);

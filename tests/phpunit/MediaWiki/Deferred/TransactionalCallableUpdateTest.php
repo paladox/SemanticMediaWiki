@@ -90,7 +90,7 @@ class TransactionalCallableUpdateTest extends \PHPUnit\Framework\TestCase {
 
 		$this->testEnvironment->executePendingDeferredUpdates();
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'Empty callback',
 			$this->spyLogger->getMessagesAsString()
 		);
@@ -121,7 +121,7 @@ class TransactionalCallableUpdateTest extends \PHPUnit\Framework\TestCase {
 
 		$this->testEnvironment->executePendingDeferredUpdates();
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'Added',
 			$this->spyLogger->getMessagesAsString()
 		);
@@ -192,7 +192,7 @@ class TransactionalCallableUpdateTest extends \PHPUnit\Framework\TestCase {
 
 		$instance->setOrigin( 'Foo' );
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'Foo',
 			$instance->getOrigin()
 		);

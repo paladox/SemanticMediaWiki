@@ -23,7 +23,7 @@ class JSONFileParseExceptionTest extends \PHPUnit\Framework\TestCase {
 			SMW_PHPUNIT_DIR . '/Fixtures/Exception/invalid.trailing.comma.json'
 		);
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			"Expected: 'STRING' - It appears you have an extra trailing comma",
 			$instance->getMessage()
 		);
@@ -34,7 +34,7 @@ class JSONFileParseExceptionTest extends \PHPUnit\Framework\TestCase {
 			'Foo'
 		);
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			"Foo is not readable!",
 			$instance->getMessage()
 		);

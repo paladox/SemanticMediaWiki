@@ -70,7 +70,7 @@ class LanguageCodeValueTest extends \PHPUnit\Framework\TestCase {
 		$instance = new LanguageCodeValue();
 		$instance->setUserValue( 'Foo' );
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'[2,"smw-datavalue-languagecode-invalid","foo"]',
 			$instance->getDataItem()->getString()
 		);

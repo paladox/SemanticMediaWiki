@@ -51,7 +51,7 @@ class DisposeOutdatedEntitiesTest extends TestCase {
 
 		$instance->execute();
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'Outdated entitie(s)',
 			$this->spyMessageReporter->getMessagesAsString()
 		);

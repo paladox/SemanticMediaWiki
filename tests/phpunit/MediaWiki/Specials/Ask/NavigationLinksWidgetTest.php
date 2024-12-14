@@ -55,7 +55,7 @@ class NavigationLinksWidgetTest extends \PHPUnit\Framework\TestCase {
 
 		$result = NavigationLinksWidget::navigationLinks( $title, $urlArgs, 20, false );
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'class="page-link">250</a>',
 			$result
 		);
@@ -108,12 +108,12 @@ class NavigationLinksWidgetTest extends \PHPUnit\Framework\TestCase {
 			->disableOriginalConstructor()
 			->getMock();
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'<div id="ask-toplinks" class="smw-ask-toplinks"><span class="float-left"><a href="#options">',
 			NavigationLinksWidget::topLinks( $title, [ 'options' ] )
 		);
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'<div id="ask-toplinks" class="smw-ask-toplinks"><span class="float-left"></span>&#160;<span class="float-right">',
 			NavigationLinksWidget::topLinks( $title, [ 'empty' ] )
 		);

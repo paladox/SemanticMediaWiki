@@ -125,7 +125,7 @@ class UpdateEntityCollationCompleteTest extends \PHPUnit\Framework\TestCase {
 		$instance->setCountDown( 0 );
 		$instance->runUpdate( $this->rebuilder );
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'... updating document ...                                   1 / 1 (100%)',
 			$this->messageReporter->getMessagesAsString()
 		);

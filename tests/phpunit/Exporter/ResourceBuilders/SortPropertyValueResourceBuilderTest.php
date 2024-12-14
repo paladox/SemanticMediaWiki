@@ -111,12 +111,12 @@ class SortPropertyValueResourceBuilderTest extends \PHPUnit\Framework\TestCase {
 
 		$res = json_encode( $this->expDataSerializer->serialize( $expData ) );
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'sort|http:\/\/semantic-mediawiki.org\/swivt\/1.0#|swivt',
 			$res
 		);
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'http:\/\/www.w3.org\/2001\/XMLSchema#string',
 			$res
 		);
@@ -141,12 +141,12 @@ class SortPropertyValueResourceBuilderTest extends \PHPUnit\Framework\TestCase {
 
 		$res = json_encode( $this->expDataSerializer->serialize( $expData ) );
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'sort|http:\/\/semantic-mediawiki.org\/swivt\/1.0#|swivt',
 			$res
 		);
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'http:\/\/www.w3.org\/2001\/XMLSchema#string',
 			$res
 		);

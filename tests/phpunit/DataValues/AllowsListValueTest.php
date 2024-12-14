@@ -62,7 +62,7 @@ class AllowsListValueTest extends \PHPUnit\Framework\TestCase {
 			$this->dataItemFactory->newDIBlob( 'Foo' )
 		);
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'[[MediaWiki:Smw_allows_list_Foo|Foo]]',
 			$instance->getShortWikiText()
 		);
@@ -79,7 +79,7 @@ class AllowsListValueTest extends \PHPUnit\Framework\TestCase {
 			$this->dataItemFactory->newDIBlob( 'Foo' )
 		);
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'MediaWiki:Smw_allows_list_Foo',
 			$instance->getLongHtmlText()
 		);
@@ -96,7 +96,7 @@ class AllowsListValueTest extends \PHPUnit\Framework\TestCase {
 			$this->dataItemFactory->newDIBlob( 'Foo' )
 		);
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'MediaWiki:Smw_allows_list_Foo',
 			$instance->getShortHtmlText()
 		);

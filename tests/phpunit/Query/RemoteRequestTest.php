@@ -52,7 +52,7 @@ class RemoteRequestTest extends \PHPUnit\Framework\TestCase {
 			$this->httpRequest
 		);
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'smw-remote-source-unavailable',
 			$instance->getQueryResult( $this->query )
 		);

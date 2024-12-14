@@ -47,7 +47,7 @@ class LastOptimizationRunMaintenanceAlertTaskHandlerTest extends \PHPUnit\Framew
 
 		$instance->setFeatureSet( SMW_ADM_ALERT_LAST_OPTIMIZATION_RUN );
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'smw-admin-alerts-last-optimization-run',
 			$instance->getHtml()
 		);

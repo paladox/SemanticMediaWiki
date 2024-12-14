@@ -43,7 +43,7 @@ class SpecialURIResolverTest extends \PHPUnit\Framework\TestCase {
 
 		$instance->execute( '' );
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'https://www.w3.org/2001/tag/issues.html#httpRange-14',
 			$instance->getOutput()->getHTML()
 		);

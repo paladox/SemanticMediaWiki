@@ -172,7 +172,7 @@ class DataUpdaterTest extends \PHPUnit\Framework\TestCase {
 		$instance->isDeferrableUpdate( true );
 		$instance->doUpdate();
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'DeferrableUpdate',
 			$this->spyLogger->getMessagesAsString()
 		);

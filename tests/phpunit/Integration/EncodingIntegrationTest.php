@@ -48,7 +48,7 @@ class EncodingIntegrationTest extends \PHPUnit\Framework\TestCase {
 
 		$instance->process( $setup['skin'], $sidebar );
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			$expected,
 			$sidebar['TOOLBOX']['smwbrowselink']['href']
 		);

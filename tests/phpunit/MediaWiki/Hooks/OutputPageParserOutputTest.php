@@ -138,7 +138,7 @@ class OutputPageParserOutputTest extends \PHPUnit\Framework\TestCase {
 		// that the content is also available via the CacheStore
 		$text = $this->factboxText->getText();
 
-		$this->assertContains( $expected['text'], $text );
+		$this->assertStringContainsString( $expected['text'], $text );
 
 		$this->assertEquals(
 			$text,

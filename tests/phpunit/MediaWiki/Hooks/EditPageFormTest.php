@@ -154,7 +154,7 @@ class EditPageFormTest extends \PHPUnit\Framework\TestCase {
 
 		$instance->process( $editPage );
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			$expected,
 			$editPage->editFormPageTop
 		);

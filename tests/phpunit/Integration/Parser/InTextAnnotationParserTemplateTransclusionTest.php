@@ -97,7 +97,7 @@ class InTextAnnotationParserTemplateTransclusionTest extends \PHPUnit\Framework\
 
 		$instance->parse( $outputText );
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			$expected['resultText'],
 			$outputText
 		);

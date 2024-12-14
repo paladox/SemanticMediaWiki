@@ -52,7 +52,7 @@ class ByNamespaceInvalidEntitiesMaintenanceAlertTaskHandlerTest extends \PHPUnit
 			$this->store
 		);
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'smw-admin-alerts-invalid-entities',
 			$instance->getHtml()
 		);

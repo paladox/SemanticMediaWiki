@@ -176,7 +176,7 @@ class MonolingualTextValueTest extends \PHPUnit\Framework\TestCase {
 
 		$instance->setUserValue( 'Foo@foobar' );
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'class="smw-highlighter" data-type="4"',
 			$instance->getWikiValue()
 		);

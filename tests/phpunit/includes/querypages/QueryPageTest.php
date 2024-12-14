@@ -102,7 +102,7 @@ class QueryPageTest extends \PHPUnit\Framework\TestCase {
 
 		// https://github.com/sebastianbergmann/phpunit/issues/1380
 		// $this->assertTag( $matcher, $result );
-		$this->assertContains( $search, $result );
+		$this->assertStringContainsString( $search, $result );
 	}
 
 	/**

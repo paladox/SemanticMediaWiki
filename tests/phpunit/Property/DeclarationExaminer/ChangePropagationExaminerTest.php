@@ -95,7 +95,7 @@ class ChangePropagationExaminerTest extends \PHPUnit\Framework\TestCase {
 			$dataItemFactory->newDIProperty( 'Bar' )
 		);
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'["error","smw-property-req-violation-change-propagation-locked-error","Bar"]',
 			$instance->getMessagesAsString()
 		);
@@ -130,7 +130,7 @@ class ChangePropagationExaminerTest extends \PHPUnit\Framework\TestCase {
 			$dataItemFactory->newDIProperty( 'Bar' )
 		);
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'["warning","smw-property-req-violation-change-propagation-pending",6]',
 			$instance->getMessagesAsString()
 		);

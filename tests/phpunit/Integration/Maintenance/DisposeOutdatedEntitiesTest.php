@@ -49,12 +49,12 @@ class DisposeOutdatedEntitiesTest extends SMWIntegrationTestCase {
 			$maintenanceRunner->run()
 		);
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'Removing outdated and invalid entities',
 			$this->spyMessageReporter->getMessagesAsString()
 		);
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'Removing query links',
 			$this->spyMessageReporter->getMessagesAsString()
 		);

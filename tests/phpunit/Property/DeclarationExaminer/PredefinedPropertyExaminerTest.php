@@ -70,7 +70,7 @@ class PredefinedPropertyExaminerTest extends \PHPUnit\Framework\TestCase {
 			$dataItemFactory->newDIProperty( '_MDAT' )
 		);
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'smw-property-predefined-mdat',
 			$instance->getMessagesAsString()
 		);
@@ -102,7 +102,7 @@ class PredefinedPropertyExaminerTest extends \PHPUnit\Framework\TestCase {
 			$dataItemFactory->newDIProperty( '_MDAT' )
 		);
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'"error","smw-property-req-violation-predefined-type"',
 			$instance->getMessagesAsString()
 		);
@@ -133,7 +133,7 @@ class PredefinedPropertyExaminerTest extends \PHPUnit\Framework\TestCase {
 			$property
 		);
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'["error","smw-property-req-violation-missing-maps-extension","Geographic coordinates"]',
 			$instance->getMessagesAsString()
 		);

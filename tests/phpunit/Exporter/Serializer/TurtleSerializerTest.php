@@ -28,7 +28,7 @@ class TurtleSerializerTest extends \PHPUnit\Framework\TestCase {
 		$instance->startSerialization();
 		$instance->finishSerialization();
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>',
 			$instance->flushContent()
 		);
@@ -50,7 +50,7 @@ class TurtleSerializerTest extends \PHPUnit\Framework\TestCase {
 		$instance->serializeExpData( $expData );
 		$instance->finishSerialization();
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			"ns:Mo:Foobar\n" .
 			" 	ns:Lu:Li  \"Foo\"^^<Bar> .\n",
 			$instance->flushContent()

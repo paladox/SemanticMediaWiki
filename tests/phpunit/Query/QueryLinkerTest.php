@@ -68,7 +68,7 @@ class QueryLinkerTest extends \PHPUnit\Framework\TestCase {
 		$link = QueryLinker::get( $query );
 		$link->setCompactLink( false );
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			$expected,
 			$link->getLocalURL()
 		);

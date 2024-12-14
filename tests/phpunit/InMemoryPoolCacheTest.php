@@ -71,7 +71,7 @@ class InMemoryPoolCacheTest extends \PHPUnit\Framework\TestCase {
 			$instance->getStats( InMemoryPoolCache::FORMAT_PLAIN )
 		);
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'ul',
 			$instance->getStats( InMemoryPoolCache::FORMAT_HTML )
 		);

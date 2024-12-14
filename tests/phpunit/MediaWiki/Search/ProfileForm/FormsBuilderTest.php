@@ -90,7 +90,7 @@ class FormsBuilderTest extends \PHPUnit\Framework\TestCase {
 			'<div id="smw-form-foo" class="smw-fields"></div></div>'
 		];
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			implode( '', $expected ),
 			$instance->buildForm( $data )
 		);

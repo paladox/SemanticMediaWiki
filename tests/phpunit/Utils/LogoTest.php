@@ -19,14 +19,14 @@ class LogoTest extends \PHPUnit\Framework\TestCase {
 	use PHPUnitCompat;
 
 	public function testGet_Small() {
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'assets/logo_small.svg',
 			Logo::get( 'small' )
 		);
 	}
 
 	public function testGet_Footer() {
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'assets/logo_footer.svg',
 			Logo::get( 'footer' )
 		);

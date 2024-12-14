@@ -55,7 +55,7 @@ class OpenFormTest extends \PHPUnit\Framework\TestCase {
 
 		$instance->isActiveForm( true );
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'<div class="smw-input-group"><div class="smw-input-field" style="display:inline-block;">',
 			$instance->makeFields( [] )
 		);

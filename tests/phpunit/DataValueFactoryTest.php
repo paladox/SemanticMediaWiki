@@ -113,7 +113,7 @@ class DataValueFactoryTest extends \PHPUnit\Framework\TestCase {
 
 		if ( $dataValue->getErrors() === [] ){
 			$this->assertInstanceOf( 'SMWDIProperty', $dataValue->getProperty() );
-			$this->assertContains( $propertyName, $dataValue->getProperty()->getLabel() );
+			$this->assertStringContainsString( $propertyName, $dataValue->getProperty()->getLabel() );
 			if ( $dataValue->getDataItem()->getDIType() === SMWDataItem::TYPE_WIKIPAGE ){
 				$this->assertEquals( $expectedValue, $dataValue->getWikiValue() );
 			}
@@ -146,7 +146,7 @@ class DataValueFactoryTest extends \PHPUnit\Framework\TestCase {
 
 		if ( $dataValue->getErrors() === [] ){
 			$this->assertInstanceOf( 'SMWDIProperty', $dataValue->getProperty() );
-			$this->assertContains( $propertyName, $dataValue->getProperty()->getLabel() );
+			$this->assertStringContainsString( $propertyName, $dataValue->getProperty()->getLabel() );
 			if ( $dataValue->getDataItem()->getDIType() === SMWDataItem::TYPE_WIKIPAGE ){
 				$this->assertEquals( $expectedValue, $dataValue->getWikiValue() );
 			}

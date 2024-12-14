@@ -77,12 +77,12 @@ class ScoreSetTest extends \PHPUnit\Framework\TestCase {
 
 		$table = $instance->asTable();
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'<tr><td>42</td><td>Foo</td><td>0</td></tr>',
 			$table
 		);
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'<tr><td>1001</td><td>Bar</td><td>5</td></tr>',
 			$table
 		);

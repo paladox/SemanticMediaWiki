@@ -134,7 +134,7 @@ class DuplicateFinderTest extends \PHPUnit\Framework\TestCase {
 			$res
 		);
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'HAVING":"count(*) > 1',
 			$query->__toString()
 		);
@@ -183,7 +183,7 @@ class DuplicateFinderTest extends \PHPUnit\Framework\TestCase {
 			$res
 		);
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'HAVING":"count(*) > 1',
 			$query->__toString()
 		);

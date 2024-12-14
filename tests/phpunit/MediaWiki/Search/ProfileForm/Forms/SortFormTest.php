@@ -43,7 +43,7 @@ class SortFormTest extends \PHPUnit\Framework\TestCase {
 			$this->webRequest
 		);
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'smw-search-sort',
 			$instance->makeFields( [] )
 		);

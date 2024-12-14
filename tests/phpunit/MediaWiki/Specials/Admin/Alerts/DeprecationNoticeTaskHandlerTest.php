@@ -146,7 +146,7 @@ class DeprecationNoticeTaskHandlerTest extends \PHPUnit\Framework\TestCase {
 			$this->messageLocalizer
 		);
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'<div class="smw-admin-deprecation">',
 			$instance->getHtml()
 		);

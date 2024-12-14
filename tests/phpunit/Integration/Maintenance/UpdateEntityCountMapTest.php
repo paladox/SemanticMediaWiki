@@ -45,7 +45,7 @@ class UpdateEntityCountMapTest extends SMWIntegrationTestCase {
 		$maintenanceRunner->setQuiet();
 		$maintenanceRunner->run();
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'update on the `smw_countmap` field',
 			$this->spyMessageReporter->getMessagesAsString()
 		);

@@ -67,7 +67,7 @@ class HashFieldTest extends \PHPUnit\Framework\TestCase {
 		$instance->setMessageReporter( $this->spyMessageReporter );
 		$instance->check();
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'Checking smw_hash field consistency',
 			$this->spyMessageReporter->getMessagesAsString()
 		);
@@ -97,7 +97,7 @@ class HashFieldTest extends \PHPUnit\Framework\TestCase {
 		$instance->setMessageReporter( $this->spyMessageReporter );
 		$instance->check();
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'Checking smw_hash field consistency',
 			$this->spyMessageReporter->getMessagesAsString()
 		);

@@ -19,7 +19,7 @@ use SMW\Tests\PHPUnitCompat;
  *
  * @author mwjames
  */
-class SemanticDataValidator extends \PHPUnit_Framework_Assert {
+class SemanticDataValidator extends \PHPUnit\Framework\Assert {
 
 	use PHPUnitCompat;
 
@@ -383,7 +383,6 @@ class SemanticDataValidator extends \PHPUnit_Framework_Assert {
 		$expected['@valueHint'][] = $value;
 
 		if ( $this->strictModeForValueMatch ) {
-
 			$this->assertContains(
 				$value,
 				$expected['propertyValues'],

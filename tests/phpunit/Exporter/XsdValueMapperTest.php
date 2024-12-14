@@ -31,7 +31,7 @@ class XsdValueMapperTest extends \PHPUnit\Framework\TestCase {
 			$value
 		);
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			$xsdType,
 			$type
 		);

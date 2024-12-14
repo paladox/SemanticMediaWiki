@@ -114,7 +114,7 @@ class RepositoryResultTest extends \PHPUnit\Framework\TestCase {
 			[ 'Foo' ]
 		);
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'Foo',
 			$instance->getComments()
 		);

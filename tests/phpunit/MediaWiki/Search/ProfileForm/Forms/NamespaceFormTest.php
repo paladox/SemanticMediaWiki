@@ -55,7 +55,7 @@ class NamespaceFormTest extends \PHPUnit\Framework\TestCase {
 
 		$instance->setSearchableNamespaces( [ 0 => 'Foo ' ] );
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			"<fieldset id='mw-searchoptions'>",
 			$instance->makeFields()
 		);

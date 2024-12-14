@@ -53,7 +53,7 @@ class UpdateEntityCollationTest extends SMWIntegrationTestCase {
 
 		$maintenanceRunner->run();
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'Collation update(s)',
 			$this->spyMessageReporter->getMessagesAsString()
 		);

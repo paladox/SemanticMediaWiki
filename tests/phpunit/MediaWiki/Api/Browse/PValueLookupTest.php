@@ -115,7 +115,7 @@ class PValueLookupTest extends \PHPUnit\Framework\TestCase {
 			]
 		);
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'[{"OR":"smw_sortkey LIKE %Foo%"},{"OR":"smw_sortkey LIKE %Foo%"},{"OR":"smw_sortkey LIKE %FOO%"}]',
 			$query->__toString()
 		);
@@ -269,7 +269,7 @@ class PValueLookupTest extends \PHPUnit\Framework\TestCase {
 			]
 		);
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'[{"OR":"o_hash LIKE %Foo%"},{"OR":"o_hash LIKE %Foo%"},{"OR":"o_hash LIKE %FOO%"},{"AND":"p_id=42"}]',
 			$query->__toString()
 		);

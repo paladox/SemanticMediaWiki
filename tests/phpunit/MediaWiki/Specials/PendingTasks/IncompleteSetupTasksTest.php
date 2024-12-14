@@ -47,7 +47,7 @@ class IncompleteSetupTasksTest extends \PHPUnit\Framework\TestCase {
 			$setupFile
 		);
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'<ul><li>⧼Foo⧽</li><li>⧼Bar⧽</li></ul>',
 			$instance->getHtml()
 		);

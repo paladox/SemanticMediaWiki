@@ -151,7 +151,7 @@ class SchemaContentFormatterTest extends \PHPUnit\Framework\TestCase {
 
 		list( $usage, $count ) = $instance->getUsage( $schema );
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'smw-columnlist-container',
 			$usage
 		);
@@ -186,7 +186,7 @@ class SchemaContentFormatterTest extends \PHPUnit\Framework\TestCase {
 
 		list( $usage, $count ) = $instance->getUsage( $schema );
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'smw-columnlist-container',
 			$usage
 		);

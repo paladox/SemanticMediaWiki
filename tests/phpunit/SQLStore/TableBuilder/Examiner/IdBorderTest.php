@@ -68,7 +68,7 @@ class IdBorderTest extends \PHPUnit\Framework\TestCase {
 			]
 		);
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'space for internal properties allocated',
 			$this->spyMessageReporter->getMessagesAsString()
 		);
@@ -111,7 +111,7 @@ class IdBorderTest extends \PHPUnit\Framework\TestCase {
 			]
 		);
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'space for internal properties allocated',
 			$this->spyMessageReporter->getMessagesAsString()
 		);
@@ -168,17 +168,17 @@ class IdBorderTest extends \PHPUnit\Framework\TestCase {
 			]
 		);
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'allocating space for internal properties',
 			$this->spyMessageReporter->getMessagesAsString()
 		);
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'moving upper bound',
 			$this->spyMessageReporter->getMessagesAsString()
 		);
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'42 to 100',
 			$this->spyMessageReporter->getMessagesAsString()
 		);

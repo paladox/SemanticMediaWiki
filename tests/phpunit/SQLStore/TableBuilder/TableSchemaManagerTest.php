@@ -111,7 +111,7 @@ class TableSchemaManagerTest extends \PHPUnit\Framework\TestCase {
 		$table = $instance->findTable( \SMW\SQLStore\SQLStore::ID_TABLE );
 		$fields = $table->get( 'fields' );
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			FieldType::TYPE_CHAR_NOCASE,
 			$fields['smw_sortkey']
 		);

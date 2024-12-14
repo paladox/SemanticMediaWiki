@@ -68,7 +68,7 @@ class ImporterTest extends \PHPUnit\Framework\TestCase {
 
 		$instance->runImport();
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'Import support was not enabled (or skipped), stopping the task',
 			$this->spyMessageReporter->getMessagesAsString()
 		);
@@ -165,7 +165,7 @@ class ImporterTest extends \PHPUnit\Framework\TestCase {
 
 		$instance->runImport();
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'BarError from create',
 			$this->spyMessageReporter->getMessagesAsString()
 		);

@@ -72,7 +72,7 @@ class PropertiesQueryPageTest extends \PHPUnit\Framework\TestCase {
 			$result
 		);
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'Foo',
 			$result
 		);
@@ -101,7 +101,7 @@ class PropertiesQueryPageTest extends \PHPUnit\Framework\TestCase {
 			[ $property, 42 ]
 		);
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'Foo',
 			$result
 		);
@@ -120,7 +120,7 @@ class PropertiesQueryPageTest extends \PHPUnit\Framework\TestCase {
 			[ $property, 42 ]
 		);
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'42',
 			$result
 		);
@@ -173,7 +173,7 @@ class PropertiesQueryPageTest extends \PHPUnit\Framework\TestCase {
 			[ $property, $count ]
 		);
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'42',
 			$result
 		);

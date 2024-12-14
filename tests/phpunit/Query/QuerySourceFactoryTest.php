@@ -93,7 +93,7 @@ class QuerySourceFactoryTest extends \PHPUnit\Framework\TestCase {
 			[]
 		);
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'SPARQLStore',
 			$instance->toString()
 		);

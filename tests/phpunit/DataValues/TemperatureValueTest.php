@@ -82,19 +82,19 @@ class TemperatureValueTest extends \PHPUnit\Framework\TestCase {
 
 		$instance->setUserValue( '100 °C' );
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'373.15 K',
 			$instance->getWikiValue()
 		);
 
 		$instance->setUserValue( '100 Fahrenheit' );
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'310.92777777778 K',
 			$instance->getWikiValue()
 		);
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'100 Fahrenheit',
 			$instance->getShortWikiText()
 		);
@@ -116,7 +116,7 @@ class TemperatureValueTest extends \PHPUnit\Framework\TestCase {
 
 		$instance->setUserValue( '100 Unknown' );
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'error',
 			$instance->getWikiValue()
 		);
@@ -146,17 +146,17 @@ class TemperatureValueTest extends \PHPUnit\Framework\TestCase {
 
 		$instance->setUserValue( '100 °C' );
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'373.15 K',
 			$instance->getWikiValue()
 		);
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'100 °C',
 			$instance->getShortWikiText()
 		);
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'100&#160;°C (373&#160;K, 212&#160;°F, 672&#160;°R)',
 			$instance->getLongWikiText()
 		);
@@ -186,17 +186,17 @@ class TemperatureValueTest extends \PHPUnit\Framework\TestCase {
 
 		$instance->setUserValue( '100 °C' );
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'373 K',
 			$instance->getWikiValue()
 		);
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'100 °C',
 			$instance->getShortWikiText()
 		);
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'373&#160;K (100&#160;°C, 212&#160;°F, 672&#160;°R)',
 			$instance->getLongWikiText()
 		);

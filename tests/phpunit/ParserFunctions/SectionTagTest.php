@@ -76,7 +76,7 @@ class SectionTagTest extends \PHPUnit\Framework\TestCase {
 
 		$args = [];
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'<section>Foo</section>',
 			$instance->parse( 'Foo', $args )
 		);
@@ -106,7 +106,7 @@ class SectionTagTest extends \PHPUnit\Framework\TestCase {
 
 		$args = [];
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'<section class="smw-property-specification">Foo</section>',
 			$instance->parse( 'Foo', $args )
 		);

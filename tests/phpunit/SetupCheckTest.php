@@ -160,7 +160,7 @@ class SetupCheckTest extends \PHPUnit\Framework\TestCase {
 			$errorType
 		);
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'<!DOCTYPE html>',
 			$instance->getError( false )
 		);

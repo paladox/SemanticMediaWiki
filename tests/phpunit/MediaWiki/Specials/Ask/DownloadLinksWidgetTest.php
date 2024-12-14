@@ -32,7 +32,7 @@ class DownloadLinksWidgetTest extends \PHPUnit\Framework\TestCase {
 		$infolink->expects( $this->atLeastOnce() )
 			->method( 'setParameter' );
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'<div id="ask-export-links" class="smw-ask-downloadlinks export-links">',
 			DownloadLinksWidget::downloadLinks( $infolink )
 		);

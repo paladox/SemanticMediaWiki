@@ -116,7 +116,7 @@ class JsonFileDirReaderTest extends \PHPUnit\Framework\TestCase {
 
 		$instance->getContentList();
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'JSON error in file',
 			implode( '', $instance->getErrors() )
 		);

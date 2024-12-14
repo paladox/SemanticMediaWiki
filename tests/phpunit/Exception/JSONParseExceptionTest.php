@@ -25,7 +25,7 @@ class JSONParseExceptionTest extends \PHPUnit\Framework\TestCase {
 			$json
 		);
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			"Expected: 'STRING' - It appears you have an extra trailing comma",
 			$instance->getMessage()
 		);

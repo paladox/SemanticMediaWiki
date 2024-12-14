@@ -139,7 +139,7 @@ class TableBuildExaminerTest extends \PHPUnit\Framework\TestCase {
 		$instance->setMessageReporter( $this->spyMessageReporter );
 		$instance->checkOnPostCreation( $tableBuilder );
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'copying smw_sortkey to smw_sort',
 			$this->spyMessageReporter->getMessagesAsString()
 		);

@@ -37,7 +37,7 @@ class HtmlTabsTest extends \PHPUnit\Framework\TestCase {
 		// MW 1.39-1.40 produces self-closing tag, which is invalid HTML
 		$actual = str_replace( '/>', '>', $actual );
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'<div class="smw-tabs foo-bar">' .
 			'<input id="tab-foo" class="nav-tab" type="radio" name="tabs" checked="">' .
 			'<label id="tab-label-foo" for="tab-foo" class="nav-label">FOO</label>' .
@@ -63,7 +63,7 @@ class HtmlTabsTest extends \PHPUnit\Framework\TestCase {
 			$actual
 		);
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'<div class="smw-tabs smw-subtab foo-bar" ' .
 			'data-subtab="&quot;&lt;input id=\&quot;tab-foo\&quot; ' .
 			'class=\&quot;nav-tab\&quot; type=\&quot;radio\&quot; ' .
@@ -84,7 +84,7 @@ class HtmlTabsTest extends \PHPUnit\Framework\TestCase {
 		// MW 1.39-1.40 produces self-closing tag, which is invalid HTML
 		$actual = str_replace( '/>', '>', $actual );
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'<div class="smw-tabs foo-bar">' .
 			'<input id="tab-foo" class="nav-tab" type="radio" name="tabs" checked="">' .
 			'<label id="tab-label-foo" for="tab-foo" class="nav-label">FOO</label>' .
@@ -100,7 +100,7 @@ class HtmlTabsTest extends \PHPUnit\Framework\TestCase {
 		$instance->tab( 'foo', 'FOO', [ 'hide' => true ] );
 		$instance->content( 'foo', '< ... bar ... >' );
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'<div class="smw-tabs foo-bar"></div>',
 			$instance->buildHTML( [ 'class' => 'foo-bar' ] )
 		);
@@ -113,7 +113,7 @@ class HtmlTabsTest extends \PHPUnit\Framework\TestCase {
 		$instance->content( 'foo', '< ... bar ... >' );
 		$instance->html( '<span>Foobar</span>' );
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'<span>Foobar</span>',
 			$instance->buildHTML()
 		);
@@ -126,7 +126,7 @@ class HtmlTabsTest extends \PHPUnit\Framework\TestCase {
 		$instance->tab( 'foo', 'FOO' );
 		$instance->content( 'foo', '< ... bar ... >' );
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'<div class="smw-tabs" dir="rtl">',
 			$instance->buildHTML()
 		);

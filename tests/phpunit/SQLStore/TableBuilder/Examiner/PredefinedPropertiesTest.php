@@ -186,7 +186,7 @@ class PredefinedPropertiesTest extends \PHPUnit\Framework\TestCase {
 		$instance->setMessageReporter( $this->spyMessageReporter );
 		$instance->check();
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'invalid registration',
 			$this->spyMessageReporter->getMessagesAsString()
 		);

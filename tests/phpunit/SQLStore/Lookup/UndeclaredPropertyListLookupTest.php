@@ -65,7 +65,7 @@ class UndeclaredPropertyListLookupTest extends \PHPUnit\Framework\TestCase {
 			$instance->isFromCache()
 		);
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'UndeclaredPropertyListLookup',
 			$instance->getHash()
 		);

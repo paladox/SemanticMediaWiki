@@ -61,7 +61,7 @@ class PropertyUsageListLookupTest extends \PHPUnit\Framework\TestCase {
 			$instance->isFromCache()
 		);
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'PropertyUsageListLookup',
 			$instance->getHash()
 		);

@@ -54,7 +54,7 @@ class RebuildElasticMissingDocumentsTest extends SMWIntegrationTestCase {
 			$maintenanceRunner->run()
 		);
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'removed replication trail',
 			$this->spyMessageReporter->getMessagesAsString()
 		);

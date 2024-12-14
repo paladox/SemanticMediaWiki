@@ -120,10 +120,7 @@ class SemanticDataTest extends \PHPUnit\Framework\TestCase {
 			$subobject->getContainer()
 		);
 
-		$this->assertInternalType(
-			'string',
-			$instance->getHash()
-		);
+		$this->assertIsString( $instance->getHash() );
 	}
 
 	public function testGetCountMap() {
@@ -332,10 +329,7 @@ class SemanticDataTest extends \PHPUnit\Framework\TestCase {
 
 		$instance->addSubobject( $subobject );
 
-		$this->assertInternalType(
-			'array',
-			$instance->getSubSemanticData()
-		);
+		$this->assertIsArray( $instance->getSubSemanticData() );
 
 		foreach ( $instance->getSubSemanticData() as $subSemanticData ) {
 

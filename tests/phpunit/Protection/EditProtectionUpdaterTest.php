@@ -115,7 +115,7 @@ class EditProtectionUpdaterTest extends \PHPUnit\Framework\TestCase {
 			$instance->isRestrictedUpdate()
 		);
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'add protection on edit, move',
 			$this->spyLogger->getMessagesAsString()
 		);
@@ -164,7 +164,7 @@ class EditProtectionUpdaterTest extends \PHPUnit\Framework\TestCase {
 			$instance->isRestrictedUpdate()
 		);
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'remove protection on edit, move',
 			$this->spyLogger->getMessagesAsString()
 		);
@@ -216,7 +216,7 @@ class EditProtectionUpdaterTest extends \PHPUnit\Framework\TestCase {
 			$instance->isRestrictedUpdate()
 		);
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'Status already set, no update required',
 			$this->spyLogger->getMessagesAsString()
 		);

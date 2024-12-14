@@ -38,7 +38,7 @@ class SortWidgetTest extends \PHPUnit\Framework\TestCase {
 	public function testEnabledWithEmptyParameters() {
 		SortWidget::setSortingSupport( true );
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'<div id="options-sort" class="smw-ask-options-sort">',
 			SortWidget::sortSection( [] )
 		);

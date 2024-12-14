@@ -28,7 +28,7 @@ class RDFXMLSerializerTest extends \PHPUnit\Framework\TestCase {
 		$instance->startSerialization();
 		$instance->finishSerialization();
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'<?xml version="1.0" encoding="UTF-8"?>',
 			$instance->flushContent()
 		);
@@ -45,7 +45,7 @@ class RDFXMLSerializerTest extends \PHPUnit\Framework\TestCase {
 		$instance->serializeExpData( $expData );
 		$instance->finishSerialization();
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'<rdf:Resource rdf:about="BarFoobar" />',
 			$instance->flushContent()
 		);
@@ -67,7 +67,7 @@ class RDFXMLSerializerTest extends \PHPUnit\Framework\TestCase {
 		$instance->serializeExpData( $expData );
 		$instance->finishSerialization();
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			"	<rdf:Resource rdf:about=\"BarFoobar\">\n" .
 			"		<ns:Lu:Li rdf:datatype=\"Bar\">Foo</ns:Lu:Li>\n" .
 			"	</rdf:Resource>\n" .

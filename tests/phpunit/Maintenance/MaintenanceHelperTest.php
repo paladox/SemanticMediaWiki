@@ -80,7 +80,7 @@ class MaintenanceHelperTest extends \PHPUnit\Framework\TestCase {
 		$instance = new MaintenanceHelper();
 		$instance->initRuntimeValues();
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'sec',
 			$instance->getFormattedRuntimeValues()
 		);

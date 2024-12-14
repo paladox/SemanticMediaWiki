@@ -157,7 +157,7 @@ class FactboxMagicWordsTest extends \PHPUnit\Framework\TestCase {
 			[
 				'magicWords' => [ 'SMW_SHOWFACTBOX' ],
 				'constants'  => SMW_FACTBOX_NONEMPTY,
-				'textOutput' => 'smwfactboxhead' // lazy check because we use assertContains
+				'textOutput' => 'smwfactboxhead' // lazy check because we use assertStringContainsString
 			]
 		];
 

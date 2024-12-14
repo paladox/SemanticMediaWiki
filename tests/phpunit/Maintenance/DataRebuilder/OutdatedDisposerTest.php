@@ -101,17 +101,17 @@ class OutdatedDisposerTest extends \PHPUnit\Framework\TestCase {
 
 		$messages = $this->spyMessageReporter->getMessagesAsString();
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'removed (IDs)',
 			$messages
 		);
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'42',
 			$messages
 		);
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'1001 (2%)',
 			$messages
 		);
@@ -159,22 +159,22 @@ class OutdatedDisposerTest extends \PHPUnit\Framework\TestCase {
 
 		$messages = $this->spyMessageReporter->getMessagesAsString();
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'removed (IDs)',
 			$messages
 		);
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'9999',
 			$messages
 		);
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'cleaning up query links (invalid)',
 			$messages
 		);
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'1002 (0%)',
 			$messages
 		);
@@ -222,22 +222,22 @@ class OutdatedDisposerTest extends \PHPUnit\Framework\TestCase {
 
 		$messages = $this->spyMessageReporter->getMessagesAsString();
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'removed (IDs)',
 			$messages
 		);
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'10',
 			$messages
 		);
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'cleaning up query links (unassigned)',
 			$messages
 		);
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'3333 (10%)',
 			$messages
 		);

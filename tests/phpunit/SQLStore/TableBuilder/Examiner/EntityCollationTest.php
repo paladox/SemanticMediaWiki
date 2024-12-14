@@ -60,7 +60,7 @@ class EntityCollationTest extends \PHPUnit\Framework\TestCase {
 		$instance->setSetupFile( $this->setupFile );
 		$instance->check();
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'adding incomplete task for entity collation conversion',
 			$this->spyMessageReporter->getMessagesAsString()
 		);
@@ -82,7 +82,7 @@ class EntityCollationTest extends \PHPUnit\Framework\TestCase {
 		$instance->setSetupFile( $this->setupFile );
 		$instance->check();
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'Checking entity collation type',
 			$this->spyMessageReporter->getMessagesAsString()
 		);

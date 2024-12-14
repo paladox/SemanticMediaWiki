@@ -25,7 +25,7 @@ class UrlArgsTest extends \PHPUnit\Framework\TestCase {
 		$instance->set( 'bar', 1001 );
 		$instance->setFragment( 'foobar' );
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'foo=42&bar=1001#foobar',
 			$instance->__toString()
 		);

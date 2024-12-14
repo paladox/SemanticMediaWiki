@@ -74,17 +74,17 @@ class FixedPropertiesTest extends \PHPUnit\Framework\TestCase {
 
 		$expected = $this->spyMessageReporter->getMessagesAsString();
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'Checking selected fixed properties IDs',
 			$expected
 		);
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'moving from 99999 to 51',
 			$expected
 		);
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'moving from 11111 to 52',
 			$expected
 		);

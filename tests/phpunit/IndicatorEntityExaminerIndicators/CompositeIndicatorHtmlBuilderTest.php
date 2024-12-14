@@ -78,7 +78,7 @@ class CompositeIndicatorHtmlBuilderTest extends \PHPUnit\Framework\TestCase {
 
 		$html = $instance->buildHTML( $indicatorProviders, $options );
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'<div class="smw-entity-examiner smw-indicator-vertical-bar-loader" ' .
 			'data-subject="Foo#0##" data-dir="" data-uselang="" ' .
 			'title="__foo__"></div>',
@@ -125,7 +125,7 @@ class CompositeIndicatorHtmlBuilderTest extends \PHPUnit\Framework\TestCase {
 
 		$html = $instance->buildHTML( $indicatorProviders, $options );
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'smw-highlighter smw-icon-entity-examiner-panel-error',
 			$html
 		);
@@ -172,7 +172,7 @@ class CompositeIndicatorHtmlBuilderTest extends \PHPUnit\Framework\TestCase {
 
 		$html = $instance->buildHTML( $indicatorProviders, $options );
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'smw-highlighter smw-icon-entity-examiner-panel-warning',
 			$html
 		);
@@ -212,7 +212,7 @@ class CompositeIndicatorHtmlBuilderTest extends \PHPUnit\Framework\TestCase {
 
 		$html = $instance->buildHTML( $indicatorProviders, $options );
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'data-deferred="yes"',
 			$html
 		);
@@ -260,7 +260,7 @@ class CompositeIndicatorHtmlBuilderTest extends \PHPUnit\Framework\TestCase {
 
 		$html = $instance->buildHTML( $indicatorProviders, $options );
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'<div class="smw-entity-examiner smw-indicator-vertical-bar-loader" ' .
 			'data-subject="Foo#0##" data-dir="" data-uselang="" ' .
 			'title="__foo__"></div>',

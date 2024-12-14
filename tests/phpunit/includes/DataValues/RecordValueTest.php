@@ -165,7 +165,7 @@ class RecordValueTest extends \PHPUnit\Framework\TestCase {
 			$instance->getDataItem()
 		);
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			"smw-datavalue-wikipage-property-invalid-title",
 			implode( ' ', $instance->getErrors() )
 		);

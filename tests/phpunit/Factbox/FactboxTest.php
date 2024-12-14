@@ -88,17 +88,17 @@ class FactboxTest extends \PHPUnit\Framework\TestCase {
 	}
 
 	public function testTabs() {
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'tab-facts-list',
 			Factbox::tabs( 'Foo' )
 		);
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'tab-facts-attachment',
 			Factbox::tabs( 'Foo', 'Bar' )
 		);
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'tab-facts-derived',
 			Factbox::tabs( 'Foo', 'Bar', 'Foobar' )
 		);

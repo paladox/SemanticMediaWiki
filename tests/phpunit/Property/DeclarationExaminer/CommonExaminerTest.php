@@ -65,7 +65,7 @@ class CommonExaminerTest extends \PHPUnit\Framework\TestCase {
 			$dataItemFactory->newDIProperty( 'Bar' )
 		);
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'["error","smw-property-namespace-disabled"]',
 			$instance->getMessagesAsString()
 		);
@@ -88,7 +88,7 @@ class CommonExaminerTest extends \PHPUnit\Framework\TestCase {
 			$dataItemFactory->newDIProperty( 'Bar' )
 		);
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'["error","smw-property-name-reserved","Bar"]',
 			$instance->getMessagesAsString()
 		);
@@ -109,7 +109,7 @@ class CommonExaminerTest extends \PHPUnit\Framework\TestCase {
 			$dataItemFactory->newDIProperty( 'Foo' )
 		);
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'["error","smw-property-label-uniqueness","Foo"]',
 			$instance->getMessagesAsString()
 		);
@@ -142,7 +142,7 @@ class CommonExaminerTest extends \PHPUnit\Framework\TestCase {
 			$dataItemFactory->newDIProperty( 'Foo' )
 		);
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'smw-property-req-violation-type',
 			$instance->getMessagesAsString()
 		);
@@ -174,7 +174,7 @@ class CommonExaminerTest extends \PHPUnit\Framework\TestCase {
 			$dataItemFactory->newDIProperty( 'Foo' )
 		);
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'{"0":"error","_msgkey":"smw-property-req-error-list","_list":["testFindErrMessages"]}',
 			$instance->getMessagesAsString()
 		);
