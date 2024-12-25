@@ -69,6 +69,7 @@ jobs:
         run: git submodule update --init --remote
 
       - name: Run tests
+        if: success() || failure()
         run: make ci
         if: matrix.coverage == false
 
