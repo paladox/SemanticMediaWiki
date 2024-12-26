@@ -85,41 +85,53 @@ class ScopeMemoryLimiterTest extends \PHPUnit\Framework\TestCase {
 	}
 
 	public function testExecute() {
-		$memoryLimitBefore = $originalMemoryLimitBefore = ini_get( 'memory_limit' );
+		// Store the original memory limit
+		$originalMemoryLimitBefore = ini_get( 'memory_limit' );
 		$converter = new ScopeMemoryLimiter();
-
-		if ( $memoryLimitBefore === "-1" ) {
-			$memoryLimitBefore = memory_get_usage() + $converter->toInt( '20M' );
+	
+		// Get current memory usage
+		$currentMemoryUsage = memory_get_usage();
+	
+		// Set a configurable buffer (e.g., 20MB) to ensure the new memory limit is above current usage
+		$buffer = $converter->toInt( '20M' );
+		
+		// Calculate new memory limit (current usage + buffer)
+		$memoryLimitBefore = $currentMemoryUsage + $buffer;
+	
+		// If the original memory limit is set to -1 (unlimited), set it to the calculated value
+		if ( $originalMemoryLimitBefore === "-1" ) {
 			ini_set( 'memory_limit', $memoryLimitBefore );
 		}
+	
+		// Mock a callable to test the execution
 		$this->testCaller = $this->getMockBuilder( '\stdClass' )
 			->disableOriginalConstructor()
-			->onlyMethods( [ 'calledFromCallable' ] )
+			->setMethods( ['calledFromCallable'] )
 			->getMock();
-
+	
 		$this->testCaller->expects( $this->once() )
 			->method( 'calledFromCallable' );
-
+	
+		// Calculate the final target memory limit (including a small increment)
 		$memoryLimit = $memoryLimitBefore + $converter->toInt( '1M' );
-
-		$instance = new ScopeMemoryLimiter(
-			$memoryLimit
-		);
-
+	
+		// Create an instance of ScopeMemoryLimiter with the new memory limit
+		$instance = new ScopeMemoryLimiter( $memoryLimit );
+	
 		$instance->execute( [ $this, 'runCallable' ] );
-
+	
 		$this->assertEquals(
 			$memoryLimit,
 			$this->memoryLimitFromCallable,
 			"Limit we expected got set."
 		);
-
+	
 		$this->assertEquals(
 			$memoryLimitBefore,
 			$instance->getMemoryLimit(),
-			"Limit was reset successsfully."
+			"Limit was reset successfully."
 		);
-
+	
 		ini_set( 'memory_limit', $originalMemoryLimitBefore );
 	}
 
